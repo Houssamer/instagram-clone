@@ -1,0 +1,36 @@
+.post__comments {
+    display: flex;
+    flex-direction: column; 
+}
+
+.post__comment {
+    margin-bottom: 1em;
+}
+
+p {
+    margin: 1px;
+    margin-left: 1em;
+    font-size: 12px;
+}
+
+.comment__form {
+    display: flex;
+}
+
+.comment__input {
+    flex: 1;
+    padding: 1em;
+    border: none;
+    border-top: 1px solid lightgrey;
+    outline: none;
+}
+
+.post__comment__button {
+    flex: 0;
+    background-color: white;
+    border: none;
+    border-top: 1px solid lightgrey;
+    outline: none;
+    color: #0095F6;
+
+}

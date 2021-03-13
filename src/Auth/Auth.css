@@ -27,7 +27,6 @@ h1 {
 
 .auth__form__signup {
     display: flex;
-    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
@@ -64,6 +63,12 @@ input {
     outline: none;
     border-radius: 3px;
 }
+
+.signup__button:hover {
+    background-color: #0161a1;
+    border: 2px solid #0161a1;
+    cursor: pointer;
+}
 .login__button {
     width: 80%;
     height: 2.5em;
@@ -73,4 +78,33 @@ input {
     border: 2px solid #0095F6;
     outline: none;
     border-radius: 3px;
+    cursor: pointer;
+    margin-bottom: .5em;
+}
+
+.login__button:hover {
+    background-color: #0161a1;
+    border: 2px solid #0161a1;
+    cursor: pointer;
+}
+
+.signUp {
+    border: none;
+    background-color: white;
+    color: #0095F6;
+    cursor: pointer;
+}
+
+.signUp:hover {
+    color: #0161a1;
+}
+.login {
+    border: none;
+    background-color: white;
+    color: #0095F6;
+    cursor: pointer;
+}
+
+.login:hover {
+    color: #0161a1;
 }

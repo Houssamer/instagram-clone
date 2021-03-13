@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+
+.insta__header {
+    position: sticky;
+    top: 0;
+    height: 8vh;
+    width: auto;
+    background-color: white;
+    border-bottom: 1px solid lightgrey;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.insta__logo {
+    object-fit: contain;
+    margin-left: 5em;
+}
+
+.avatar__img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 5em;
+    padding: .2em;
+    cursor: pointer;
+}
+
+
+
+.option {
+    border: 2px solid lightgrey;
+    position: absolute;
+    width: 100px;
+    height: 30px;
+    top: 3.1em;
+    left: 89vw;
+    background-color: white;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.logout__button {
+    background-color: white;
+    color: #C6C6C6;
+    font-family: sans-serif;
+    font-weight: bolder;
+    border: none;
+    width: 100%;
+    height: 30px;
+}
+
+.logout__button:hover {
+    cursor: pointer;
+    background-color: rgb(235, 232, 232);
+}
+
+.open__upload__button {
+    align-self: center;
+    margin-right: 5em;
+    background-color: chocolate;
+    width: 10em;
+    height: 2.2em;
+    border: 2px solid chocolate;
+    outline: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    font-family: Roboto;
+    font-weight: bold;
+}
+
+.open__upload__button:hover {
+    background-color: rgb(172, 87, 27);
+    border: 2px solid rgb(172, 87, 27);
+    cursor: pointer;
+}

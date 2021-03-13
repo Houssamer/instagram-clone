@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+.post  {
+    font-family: Poppins;
+    object-fit: contain;
+    background-color: white;
+    max-width: 600px;
+    max-height: auto;
+    border: 1px solid lightgrey;
+    margin: 1em;
+}
