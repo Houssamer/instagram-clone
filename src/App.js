@@ -29,7 +29,7 @@ function App() {
         <Auth UserLogOut={() => UserLogOut()} UserLogIn={UserLogIn} user={User} />
       </div>
       <div className="app__insta" style={{display : User ? 'block' : 'none'}}>
-        <Insta Logout={Logout} open={open} setOpen={setOpen} />
+        <Insta Logout={Logout} open={open} setOpen={setOpen} user={User} />
       </div>
     </div>
   );

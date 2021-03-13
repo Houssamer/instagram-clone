@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import logo from '../../735145cfe0a4.png'
-import avatar from '../../_MG_8623.jpg'
 import './Header.css'
 
 function Header(props) {
@@ -13,7 +12,7 @@ function Header(props) {
             </div>
             <div className="insta__avatar">
                 <img 
-                    src={avatar} 
+                    src={props.avatar} 
                     alt="insta avatar" 
                     className="avatar__img" 
                     onClick={() => props.setOpen(!props.open)}
@@ -21,6 +20,7 @@ function Header(props) {
                 />
             </div>
             <div className="option" style={{display : props.open ? 'block' : 'none'}}>
+                <button className="change__button" onClick={props.change}>Change</button>
                 <button className="logout__button" onClick={props.Logout}>Log Out</button>
             </div>
         </div>

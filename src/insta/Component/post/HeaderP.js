@@ -1,11 +1,12 @@
 import React from 'react'
-import avatar from '../../../_MG_8623.jpg'
 import './HeaderP.css'
+import def from '../../../wallpaperflare.com_wallpaper.jpg'
 
-function HeaderP({username}) {
+
+function HeaderP({username, avatar, user}) {
     return (
         <div className="post__header">
-            <img src={avatar} alt="post avatar" className="post__avatar"/>
+            <img src={username === user ? avatar : def} alt="post avatar" className="post__avatar"/>
             <h4 className="post__username">{username}</h4>
         </div>
     )

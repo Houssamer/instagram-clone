@@ -32,5 +32,13 @@ p {
     border-top: 1px solid lightgrey;
     outline: none;
     color: #0095F6;
+}
 
+.post__comment__button:hover {
+    color: #0072be;
+    cursor: pointer;
+}
+
+.post__comment__button:disabled {
+    color: #60bbf8;
 }
