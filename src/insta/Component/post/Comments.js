@@ -35,8 +35,8 @@ function Comments({postId, user}) {
     return (
         <div className="post__comments">
             <div className="post__comment">
-                {comments.map((comment) => (
-                    <p>
+                {comments.map((comment, index) => (
+                    <p key={index}>
                         <strong>{comment.username}</strong> {comment.text}
                     </p>
                 ))}

@@ -9,13 +9,6 @@ function App() {
   const [User, setUser] = useState('');
   const [open, setOpen] = useState(false);
   
-  function UserLogOut() {
-    setUser('');
-  }
-
-  function UserLogIn(user) {
-    setUser(user);
-  }
 
   function Logout(event) {
     event.preventDefault();
@@ -26,7 +19,7 @@ function App() {
   return (
     <div className="App">
       <div className="app__auth" style={{display : !User ? 'flex' : 'none'}}>
-        <Auth UserLogOut={() => UserLogOut()} UserLogIn={UserLogIn} user={User} />
+        <Auth setUser={setUser} User={User} />
       </div>
       <div className="app__insta" style={{display : User ? 'block' : 'none'}}>
         <Insta Logout={Logout} open={open} setOpen={setOpen} user={User} />

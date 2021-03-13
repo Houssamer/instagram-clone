@@ -3,38 +3,50 @@ import './Auth.css'
 import {auth} from '../firebase'
 
 
-function Auth(props) {
+function Auth({User, setUser}) {
 
     const [signUpIsClicked, setSignedUpIsClicked] = useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [username, setUsername] = useState('');
+    const [update, setUpdate] = useState(false);
+
+
 
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged((authUser) => {
             if (authUser) {
-                props.UserLogIn(authUser.displayName);
+                console.log(authUser.displayName)
+                setUser(authUser.displayName);
+                console.log(User)
             } else {
-                props.UserLogOut();
+                setUser('');
             }
+            setUpdate(false);
+            console.log(update);
+            console.log(User);
         })
 
-        return unsubscribe;
-    }, [props.user, username])
+        return () => {
+            unsubscribe();
+        } 
+    }, [User, setUser, update]);
 
     function handleClick(event) {
         event.preventDefault();
         setSignedUpIsClicked(!signUpIsClicked)
     }
 
-    function Login(event) {
+    const Login = (event) => {
         event.preventDefault();
 
         auth.signInWithEmailAndPassword(email, password)
         .catch((error) => alert(error.message));
+
+        setUpdate(true);
     }
 
-    function signUp(event) {
+    const signUp = (event) => {
         event.preventDefault();
 
         auth.createUserWithEmailAndPassword(email, password)
@@ -43,7 +55,9 @@ function Auth(props) {
                 displayName: username
             })
         })
-        .catch((error) => alert(error.message))
+        .catch((error) => alert(error.message));
+        
+        setUpdate(true);
     }
 
     return (
@@ -65,7 +79,7 @@ function Auth(props) {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                 />
-                <button className="login__button" onClick={Login}>Login</button>
+                <button type="submit" className="login__button" onClick={Login}>Login</button>
                 <p>You don't have an account yet? 
                     <button className="signUp" 
                         onClick={handleClick} >Sign Up
@@ -94,7 +108,7 @@ function Auth(props) {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                 />
-                <button className="signup__button" onClick={signUp}>Sign Up</button>
+                <button type="submit" className="signup__button" onClick={signUp}>Sign Up</button>
                 <p>You already have an account? <button className="login" onClick={handleClick}>Login</button></p>
             </form>
         </div>

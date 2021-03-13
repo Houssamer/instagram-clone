@@ -5,7 +5,7 @@ import './Posts.css'
 function Posts({posts, user, avatar}) {
     return (
         <div className="posts">
-            <h1 style={{display: !posts && 'none'}}>No posts yet</h1>
+            <h1 style={{display: posts && 'none'}}>No posts yet</h1>
            { posts.map((post) => (
                 <Post 
                     key={post.id} 
